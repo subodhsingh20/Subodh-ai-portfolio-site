@@ -1,0 +1,114 @@
+[
+  {
+    "id": "about-subodh-professional-summary",
+    "category": "about",
+    "title": "Professional Summary",
+    "text": "Final-year B.Tech CSE student at Ganpat University with hands-on experience in Python development, cloud deployment, and Linux administration. Built a production-grade Farmer-to-Customer Marketplace using a Dockerised Node.js/Express backend, AWS Amplify CI/CD, and IBM Cloudant, with real-time geolocation via OpenStreetMap. Delivered three end-to-end Python applications — a Weather API Dashboard, a PDF Report Generator, and an NLP AI Chatbot — during an internship at CodTech IT Solutions. Certified across networking, containerization, cloud fundamentals, and Linux administration, with a self-driven approach to building and deploying real systems.",
+    "source": "resume"
+  },
+  {
+    "id": "project-farmdirect-marketplace",
+    "category": "project",
+    "title": "Farmer-to-Customer Marketplace (FarmDirect)",
+    "text": "A production-grade marketplace connecting farmers directly with buyers. Built with a Dockerised Node.js/Express backend and RESTful APIs backed by IBM Cloudant. Automated CI/CD pipelines set up using AWS Amplify and Render. Integrated OpenStreetMap for real-time geolocation and Stripe (test mode) for payment processing.",
+    "source": "resume"
+  },
+  {
+    "id": "project-ai-portfolio-assistant",
+    "category": "project",
+    "title": "AI Portfolio Assistant (RAG Chatbot)",
+    "text": "A retrieval-augmented chatbot embedded directly into this portfolio. It answers questions about Subodh's skills, projects, and experience using local MiniLM embeddings, in-memory vector search, and Groq's Llama 3.3 70B for grounded response generation. Built end-to-end: React chat widget, Node.js/Express backend, deployed on Vercel and Render.",
+    "source": "manual"
+  },
+  {
+    "id": "project-nlp-ai-chatbot",
+    "category": "project",
+    "title": "NLP AI Chatbot",
+    "text": "Built during the Python Developer internship at CodTech IT Solutions. An NLP-based chatbot covering natural language understanding and response generation, delivered as part of the full software development lifecycle from requirements to deployment.",
+    "source": "resume"
+  },
+  {
+    "id": "project-weather-dashboard",
+    "category": "project",
+    "title": "Weather API Dashboard",
+    "text": "A live weather dashboard built during the CodTech internship, using REST API integration and Python for automated data collection, with Pandas and Matplotlib for data visualization.",
+    "source": "resume"
+  },
+  {
+    "id": "project-pdf-report-generator",
+    "category": "project",
+    "title": "PDF Report Generator",
+    "text": "An automated PDF report generation tool built during the CodTech internship, covering automated data collection and reporting workflows using Python scripting.",
+    "source": "resume"
+  },
+  {
+    "id": "skill-devops-cloud",
+    "category": "skill",
+    "title": "DevOps and Cloud",
+    "text": "Docker, AWS (EC2, S3, Amplify), IBM Cloud (Watsonx, Toolchain, Continuous Delivery), CI/CD concepts, GitHub Actions, Jenkins basics, Linux environments, and basic Kubernetes concepts.",
+    "source": "resume"
+  },
+  {
+    "id": "skill-programming-languages",
+    "category": "skill",
+    "title": "Programming Languages",
+    "text": "Python (scripting, automation, Pandas, Matplotlib), C/C++, and Java at a basic level, built on a B.Tech CSE foundation.",
+    "source": "resume"
+  },
+  {
+    "id": "skill-databases",
+    "category": "skill",
+    "title": "Databases",
+    "text": "SQL, PostgreSQL, and Redis (conceptual), applied in data-driven applications, API integration, and backend data management.",
+    "source": "resume"
+  },
+  {
+    "id": "skill-frontend",
+    "category": "skill",
+    "title": "Frontend Development",
+    "text": "HTML5, CSS3, JavaScript, React.js (learning), and Angular at a basics level, used to build responsive interfaces and user-friendly web experiences.",
+    "source": "resume"
+  },
+  {
+    "id": "skill-tools-workflow",
+    "category": "skill",
+    "title": "Tools and Workflow",
+    "text": "Git, GitHub, GitHub Actions, Jenkins basics, Linux command-line workflows, and Docker-based environments, with a workflow emphasizing version control, automation, and REST API integration.",
+    "source": "resume"
+  },
+  {
+    "id": "experience-codtech-python-developer-internship",
+    "category": "experience",
+    "title": "Python Developer Internship at CodTech IT Solutions",
+    "text": "Completed a Python Developer internship at CodTech IT Solutions from June 10 to July 25, 2025. Delivered three end-to-end Python applications — a live Weather API Dashboard, an automated PDF Report Generator, and an NLP-based AI Chatbot — covering API integration, data visualization with Pandas and Matplotlib, and the full software development lifecycle.",
+    "source": "resume"
+  },
+  {
+    "id": "experience-ahmedabad-book-club",
+    "category": "experience",
+    "title": "Community Outreach Volunteer, Ahmedabad Book Club",
+    "text": "Volunteered with the Ahmedabad Book Club in 2024, visiting schools across Ahmedabad as part of a 4-member sub-group to deliver structured speeches and interactive activities promoting reading and critical thinking, developing public speaking and team coordination skills.",
+    "source": "resume"
+  },
+  {
+    "id": "education-subodh",
+    "category": "education",
+    "title": "Education",
+    "text": "B.Tech Computer Science Engineering at Ganpat University, Institute of Computer Technology (2023-2027, expected), CGPA 6.33. Senior Secondary (12th): 54%. Secondary (10th): 80%.",
+    "source": "resume"
+  },
+  {
+    "id": "certifications-full-list",
+    "category": "certification",
+    "title": "Certifications",
+    "text": "Introduction to SQL — DataCamp (Aug 2023); CCNAv7: Introduction to Networks — Cisco Networking Academy (17 May 2024); Red Hat System Administration I (RH124) — Red Hat Academy, Certificate of Attendance (8 June 2024); Docker Essentials: A Developer Introduction (CO0101EN) — IBM (Oct 2024); Linux Basics Course & Labs — KodeKloud (Feb 2025); Python 101 for Data Science (PY0101EN) — IBM (9 April 2025); CCNA: Switching, Routing, and Wireless Essentials — Cisco Networking Academy (6 Oct 2025); Introduction to Cloud (CC0101EN) — IBM (9 April 2026).",
+    "source": "resume"
+  },
+  {
+    "id": "contact-subodh",
+    "category": "contact",
+    "title": "Contact",
+    "text": "Subodh can be reached at subodhsingh6536@gmail.com or +91 9054608554. LinkedIn: https://www.linkedin.com/in/subodh-singh-717828280. GitHub: https://github.com/subodhsingh20.",
+    "source": "resume"
+  }
+]
