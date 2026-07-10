@@ -453,43 +453,10 @@
   filter: brightness(1.05);
   transform: translateY(-1px);
 }
-  border: 1px solid var(--chat-border);
-  border-radius: 12px;
-  color: var(--chat-text);
-  flex: 1;
-  font: inherit;
-  font-size: 14px;
-  min-width: 0;
-  outline: none;
-  padding: 10px 12px;
-  resize: none;
-  max-height: 140px;
-}
 
-.chat-widget__form input:focus {
+.chat-widget__form textarea:focus {
   border-color: var(--chat-accent);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
-}
-
-.chat-widget__form button {
-  background: var(--chat-accent);
-  border: 0;
-  border-radius: 12px;
-  color: #ffffff;
-  cursor: pointer;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  min-height: 42px;
-  padding: 0 15px;
-  transition:
-    background 160ms ease,
-    transform 160ms ease;
-}
-
-.chat-widget__form button:hover:not(:disabled) {
-  background: var(--chat-accent-dark);
-  transform: translateY(-1px);
 }
 
 .chat-widget__form button:disabled {

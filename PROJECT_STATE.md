@@ -30,8 +30,14 @@
   - The backend indexes the current knowledge base and performs retrieval locally.
   - The knowledge base now contains corrected project and contact data, including FarmDirect, the CodTech internship projects, and real contact details.
   - The portfolio UI now reflects the updated project list and uses real email/GitHub/LinkedIn contact links.
+  - A root README.md now documents the project for GitHub, including setup, architecture, API endpoints, environment variables, testing, status, and roadmap.
+  - `portfolio/node_modules` has been removed from Git tracking, root/portfolio ignore rules now cover dependency and env files, and the cleanup commit has been pushed to GitHub.
+  - Frontend deployment config now includes `portfolio/vercel.json` with `outputDirectory: "dist"` to override the previous Vercel `dist ` trailing-space setting.
+  - The chat widget CSS syntax warning from an orphan form style block has been fixed; `npm.cmd --prefix portfolio run build` completes successfully.
+  - `portfolio/dist` has been removed from Git tracking because it is generated build output and is now ignored by `portfolio/.gitignore`.
 - What is not done yet:
-  - No production deployment setup for backend or frontend.
+  - Backend production deployment is still not configured in the repo.
+  - Frontend Vercel deployment config has been added, but the live deployment still needs to be verified after pushing.
   - No formal production hardening beyond basic local error handling and rate limiting.
 - Known bugs / rough edges:
   - The backend currently fails to start if port 3001 is already occupied.
@@ -45,6 +51,9 @@ Recent UI/UX updates (live in frontend):
   - [x] Replaced single-line input with a small auto-resizing `textarea` supporting Enter to send and Shift+Enter for newline.
   - [x] Improved bubble shadows, hover micro-interactions, and focus outlines for accessibility.
   - [ ] Visual polish/brand assets: iconography and color tokens still need final design assets.
+
+Documentation updates:
+  - [x] Added a GitHub-ready root README.md with project overview, features, tech stack, architecture, folder structure, setup instructions, API reference, knowledge-base notes, manual testing steps, current status, rough edges, roadmap, security notes, and author links.
 
 ## 4. Environment & Credentials Setup
 - Required environment variables:
