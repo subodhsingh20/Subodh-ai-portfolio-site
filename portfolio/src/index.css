@@ -135,19 +135,70 @@ small,
 
 .nav-toggle {
   display: none;
-  border: none;
-  background: transparent;
-  padding: 10px;
+  align-items: center;
+  border: 1px solid rgba(248, 250, 252, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  height: 44px;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+  width: 48px;
 }
 
 .nav-toggle span {
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
   background: #f8fafc;
-  margin: 4px 0;
   border-radius: 999px;
+  transform-origin: center;
+  transition:
+    opacity 160ms ease,
+    transform 180ms ease,
+    width 180ms ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(248, 250, 252, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.42);
+  outline-offset: 3px;
+}
+
+.nav-toggle[aria-expanded='true'] {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+}
+
+.nav-toggle[aria-expanded='true'] span {
+  background: #0f172a;
+}
+
+.nav-toggle[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.4);
+}
+
+.nav-toggle[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-links {

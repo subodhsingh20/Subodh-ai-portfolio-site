@@ -36,6 +36,7 @@
   - The chat widget CSS syntax warning from an orphan form style block has been fixed; `npm.cmd --prefix portfolio run build` completes successfully.
   - `portfolio/dist` has been removed from Git tracking because it is generated build output and is now ignored by `portfolio/.gitignore`.
   - Mobile navbar dropdown has been fixed with an opaque surface panel, higher stacking order, full-width vertical link rows, and deterministic close-on-link-click behavior.
+  - Mobile hamburger button has been visually polished with a tappable rounded surface, focus state, hover lift, and animated open/close icon state.
 - What is not done yet:
   - Backend production deployment is still not configured in the repo.
   - Frontend Vercel deployment config has been added, but the live deployment still needs to be verified after pushing.
