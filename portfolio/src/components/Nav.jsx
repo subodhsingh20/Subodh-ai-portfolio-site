@@ -43,7 +43,9 @@ export default function Nav() {
         <button
           type="button"
           className="nav-toggle"
-          aria-label="Open navigation menu"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-controls="site-navigation"
+          aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
           <span />
@@ -51,13 +53,19 @@ export default function Nav() {
           <span />
         </button>
 
-        <div className={`nav-links ${menuOpen ? 'nav-links--open' : ''}`}>
+        <div
+          id="site-navigation"
+          className={`nav-links ${menuOpen ? 'nav-links--open' : ''}`}
+        >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className={active === item.href.slice(1) ? 'active' : ''}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setActive(item.href.slice(1))
+                setMenuOpen(false)
+              }}
             >
               {item.label}
             </a>
