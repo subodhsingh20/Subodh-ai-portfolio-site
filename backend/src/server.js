@@ -20,6 +20,7 @@ dotenv.config({
 
 const app = express();
 const port = Number(process.env.PORT) || 3001;
+const host = process.env.HOST || '0.0.0.0';
 const chatRateLimitWindowMs = 60 * 60 * 1000;
 const chatRateLimitMaxRequests = 15;
 const chatRateLimitStore = new Map();
@@ -143,8 +144,8 @@ try {
   await indexKnowledgeBase();
   console.log(`Knowledge base indexed: ${getChunkCount()} chunks`);
 
-  app.listen(port, '127.0.0.1', () => {
-    console.log(`Retrieval server listening on http://127.0.0.1:${port}`);
+  app.listen(port, host, () => {
+    console.log(`Retrieval server listening on http://${host}:${port}`);
   });
 } catch (error) {
   console.error('Failed to start retrieval server.');
