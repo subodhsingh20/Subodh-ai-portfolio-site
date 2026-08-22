@@ -1,6 +1,5 @@
-// Groq free tier limits are model-specific. Some models list 30 RPM and 14,400
-// requests/day, while llama-3.3-70b-versatile may have a lower daily cap, so
-// server.js keeps a conservative per-IP limit before requests reach this module.
+// OpenRouter is OpenAI-compatible, so the existing SDK can be pointed at its
+// API host while server.js keeps the conservative per-IP request limit.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,17 +14,17 @@ const systemPromptPath = path.resolve(__dirname, '../../data/system-prompt.txt')
 
 dotenv.config({ path: envPath });
 
-const groqApiKey = process.env.GROQ_API_KEY;
+const openRouterApiKey = process.env.OPENROUTER_API_KEY;
 
-if (!groqApiKey || groqApiKey === 'your_key_here') {
+if (!openRouterApiKey || openRouterApiKey === 'your_key_here') {
   throw new Error(
-    'GROQ_API_KEY is missing. Add a real Groq API key to backend/.env before starting the chat server.'
+    'OPENROUTER_API_KEY is missing. Add a real OpenRouter API key to backend/.env before starting the chat server.'
   );
 }
 
 const client = new OpenAI({
-  apiKey: groqApiKey,
-  baseURL: 'https://api.groq.com/openai/v1'
+  apiKey: openRouterApiKey,
+  baseURL: 'https://openrouter.ai/api/v1'
 });
 
 const systemPrompt = fs.readFileSync(systemPromptPath, 'utf8').trim();
@@ -70,7 +69,7 @@ ${contextBlock}`;
 
   try {
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'meta-llama/llama-3.3-70b-instruct',
       max_tokens: 300,
       messages: [
         {
@@ -127,7 +126,7 @@ If you cannot generate follow-up questions, return an empty array for followUps.
     };
   } catch (error) {
     const status = error?.status ? ` Status: ${error.status}.` : '';
-    console.error(`Groq answer generation failed.${status}`);
+    console.error(`OpenRouter answer generation failed.${status}`);
     return {
       answer: getFallbackAnswer(retrievedChunks),
       followUps: []

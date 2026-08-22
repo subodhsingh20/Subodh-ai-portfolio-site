@@ -7,6 +7,21 @@ const suggestedQuestions = [
   'What are his skills?'
 ]
 
+const defaultApiBaseUrl = 'http://localhost:3001'
+
+function buildApiUrl(path) {
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`
+  const rawBaseUrl = import.meta.env.VITE_API_URL
+  const baseUrl =
+    typeof rawBaseUrl === 'string' ? rawBaseUrl.trim() : defaultApiBaseUrl
+
+  if (!baseUrl || baseUrl === '/') {
+    return normalizedPath
+  }
+
+  return `${baseUrl.replace(/\/+$/, '')}${normalizedPath}`
+}
+
 function ChatIcon() {
   return (
     <svg
@@ -116,6 +131,7 @@ function ChatWidget({ defaultOpen = false }) {
   const [showTooltip, setShowTooltip] = useState(false)
   const [tooltipDismissed, setTooltipDismissed] = useState(false)
   const messageListRef = useRef(null)
+  const latestMessageContentRef = useRef(null)
   const inputRef = useRef(null)
   const launcherRef = useRef(null)
   const tooltipTimerRef = useRef(null)
@@ -133,11 +149,24 @@ function ChatWidget({ defaultOpen = false }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [isOpen])
 
-  // Keep the newest user or bot message visible as the conversation grows.
+  // Keep the newest answer visible without snapping down to follow-up chips.
   useEffect(() => {
-    if (messageListRef.current) {
-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight
+    const messageList = messageListRef.current
+    const latestMessage = messages[messages.length - 1]
+
+    if (!messageList) {
+      return
     }
+
+    if (latestMessage?.role === 'bot' && latestMessageContentRef.current) {
+      latestMessageContentRef.current.scrollIntoView({
+        block: 'end',
+        behavior: 'smooth'
+      })
+      return
+    }
+
+    messageList.scrollTop = messageList.scrollHeight
   }, [messages, isLoading, showColdStartText])
 
   useEffect(() => {
@@ -176,9 +205,7 @@ function ChatWidget({ defaultOpen = false }) {
     }, 5000)
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
-
-      const response = await fetch(`${apiUrl}/api/chat`, {
+      const response = await fetch(buildApiUrl('/api/chat'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -354,12 +381,15 @@ function ChatWidget({ defaultOpen = false }) {
             </div>
           )}
 
-          {messages.map((message) => (
+          {messages.map((message, index) => (
             <div
               className={`chat-widget__message-row chat-widget__message-row--${message.role}`}
               key={message.id}
             >
-              <div className="chat-widget__message-content">
+              <div
+                className="chat-widget__message-content"
+                ref={index === messages.length - 1 ? latestMessageContentRef : null}
+              >
                 {message.role === 'bot' && (
                   <div className="chat-widget__avatar" aria-hidden>
                     S

@@ -372,6 +372,36 @@ small,
   font-size: 13px;
 }
 
+.project-demo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.project-demo-link:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.project-demo-link:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+  outline-offset: 3px;
+}
+
 .section h2 {
   margin-bottom: 18px;
 }

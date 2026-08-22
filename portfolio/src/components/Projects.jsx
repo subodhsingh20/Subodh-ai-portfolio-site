@@ -4,7 +4,7 @@ const projects = [
     title: 'Farmer-to-Customer Marketplace (FarmDirect)',
     desc: 'Dockerised Node.js/Express backend, RESTful APIs backed by IBM Cloudant, CI/CD via AWS Amplify + Render, OpenStreetMap geolocation, Stripe test-mode payments.',
     tech: 'Node.js, Express, Docker, AWS Amplify, IBM Cloudant, OpenStreetMap',
-    link: 'https://main.d2rlq4a76ba9ai.amplifyapp.com/'
+    link: 'https://market-place-farmer-hub.vercel.app/'
   },
   {
     id: 2,
@@ -51,10 +51,11 @@ export default function Projects() {
                 href={p.link}
                 target="_blank"
                 rel="noreferrer"
-                className="small"
-                style={{ marginTop: 18, display: 'inline-block' }}
+                className="project-demo-link"
+                aria-label={`Open live demo for ${p.title}`}
               >
-                Live demo
+                <span>Live demo</span>
+                <span aria-hidden="true">-&gt;</span>
               </a>
             )}
           </article>

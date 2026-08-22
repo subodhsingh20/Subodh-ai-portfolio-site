@@ -1,6 +1,8 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { generateAnswer } from './llm.js';
 import {
@@ -9,10 +11,15 @@ import {
   retrieveTopK
 } from './vectorStore.js';
 
-dotenv.config();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+dotenv.config({
+  path: path.resolve(__dirname, '../.env'),
+  override: process.env.NODE_ENV !== 'production'
+});
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = Number(process.env.PORT) || 3001;
 const chatRateLimitWindowMs = 60 * 60 * 1000;
 const chatRateLimitMaxRequests = 15;
 const chatRateLimitStore = new Map();
@@ -136,8 +143,8 @@ try {
   await indexKnowledgeBase();
   console.log(`Knowledge base indexed: ${getChunkCount()} chunks`);
 
-  app.listen(port, () => {
-    console.log(`Retrieval server listening on http://localhost:${port}`);
+  app.listen(port, '127.0.0.1', () => {
+    console.log(`Retrieval server listening on http://127.0.0.1:${port}`);
   });
 } catch (error) {
   console.error('Failed to start retrieval server.');

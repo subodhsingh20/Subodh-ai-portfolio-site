@@ -1,0 +1,24 @@
+
+> rag-portfolio-backend@1.0.0 start
+> node src/server.js
+
+Loading embedding model: Xenova/all-MiniLM-L6-v2
+Model load: initiate tokenizer.json
+Model load: initiate tokenizer_config.json
+Model load: initiate config.json
+Model load: download tokenizer.json
+Model load: download tokenizer_config.json
+Model load: download config.json
+Model download: config.json 100%
+Model load: done config.json
+Model load: initiate onnx/model_quantized.onnx
+Model load: download onnx/model_quantized.onnx
+Model download: tokenizer_config.json 100%
+Model load: done tokenizer_config.json
+Model download: tokenizer.json 100%
+Model load: done tokenizer.json
+Model download: onnx/model_quantized.onnx 100%
+Model load: done onnx/model_quantized.onnx
+Model load: ready
+Knowledge base indexed: 16 chunks
+Retrieval server listening on http://127.0.0.1:3001
