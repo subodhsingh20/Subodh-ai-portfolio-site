@@ -2,7 +2,7 @@
 
 A full-stack portfolio website with an embedded AI assistant that answers questions about Subodh Singh's skills, projects, experience, certifications, and contact details.
 
-The chatbot uses retrieval-augmented generation (RAG): it retrieves relevant chunks from a local knowledge base, passes those chunks to a Groq-hosted LLM, and returns a grounded answer through the portfolio chat widget.
+The chatbot uses retrieval-augmented generation (RAG): it retrieves relevant chunks from a local knowledge base and returns a grounded answer through the portfolio chat widget.
 
 ## Project Overview
 
