@@ -45,11 +45,6 @@ The assistant is designed to answer only from the provided portfolio knowledge b
 - OpenAI SDK configured for Groq
 
 ### AI / RAG
-
-- Local embeddings: `@xenova/transformers`
-- Embedding model: `Xenova/all-MiniLM-L6-v2`
-- LLM provider: Groq
-- Generation model: `llama-3.3-70b-versatile`
 - Retrieval: in-memory cosine similarity over knowledge chunks
 
 ## Architecture
@@ -70,7 +65,7 @@ Express Backend
 Vector Store retrieves top matching knowledge chunks
   |
   v
-Groq LLM receives system prompt + retrieved context
+Open Router receives system prompt + retrieved context
   |
   v
 Answer + follow-up questions returned to frontend
@@ -113,7 +108,7 @@ Answer + follow-up questions returned to frontend
 - `backend/src/server.js` - Defines API endpoints and starts the backend server.
 - `backend/src/vectorStore.js` - Embeds the knowledge base and retrieves similar chunks.
 - `backend/src/embeddings.js` - Uses Xenova Transformers for local embeddings.
-- `backend/src/llm.js` - Calls Groq and formats chatbot answers.
+- `backend/src/llm.js` - Calls open router and formats chatbot answers.
 - `data/knowledge-base.json` - Source content used by retrieval.
 - `data/system-prompt.txt` - Defines assistant behavior and grounding rules.
 
@@ -127,7 +122,7 @@ Create `backend/.env`:
 
 ```env
 PORT=3001
-GROQ_API_KEY=your_groq_api_key_here
+Open_Router_key=api_key
 ```
 
 `GROQ_API_KEY` is required for answer generation. Do not commit real API keys.
